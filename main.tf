@@ -37,7 +37,7 @@ resource "aws_iam_role_policy_attachment" "main" {
 
 resource "aws_eks_fargate_profile" "main" {
   cluster_name           = var.cluster_name
-  fargate_profile_name   = var.fargate_profile_name == null ? var.fargate_profile_name : format("fargate-profile-%s", var.namespace)
+  fargate_profile_name   = var.fargate_profile_name != null ? var.fargate_profile_name : format("fargate-profile-%s", var.namespace)
   pod_execution_role_arn = aws_iam_role.main.arn
   subnet_ids             = var.subnet_ids
   tags                   = local.tags
