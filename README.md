@@ -8,7 +8,7 @@ Terraform module to configure an Fargate Profile on AWS EKS
 ```hcl
 module "eks-fargate-profile" {
   source  = "native-cube/eks-fargate-profile/aws"
-  version = "1.0.0"
+  version = "~> 1.0.1"
 
   cluster_name = "eks-native-cube"
   subnet_ids   = ["subnet-037c37205ce1cd88c", "subnet-0bb4e7a5c3120bc47", "subnet-07a58a249f38a1f58"]
